@@ -1,0 +1,30 @@
+<p>{{childText}}</p>
+
+<img src="oiia.jpg" alt="" *ngIf="isImageVisible" width="400px" height="400px">
+
+<h1>Products</h1>
+<table>
+    <thead>
+        <tr>
+            <th><button type="button" (click)="onAddRow()">Add</button></th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Qty</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of dynamicRows.controls; let i = index;" [formGroupName]="i">
+            <td>
+                <input type="text" formControlName="name">
+            </td>
+            <td>
+                <input type="text" formControlName="description">
+            </td>
+            <td>
+                <input type="text" formControlName="qty">
+            </td>
+        </tr>
+    </tbody>
+</table>
